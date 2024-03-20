@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import configuration from './config/configuration';
 import { MongooseConfigService } from './config/MongooseConfigService';
+import { MailerModule } from './mailer/mailer.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { MongooseConfigService } from './config/MongooseConfigService';
       load: [configuration],
     }),
     BookModule,
+    MailerModule,
   ],
 })
 export class AppModule {}
